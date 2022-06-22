@@ -1,6 +1,6 @@
-<h1 class="coinGeckoTitle">Coin Gecko</h1>
+<h1 *ngIf="coins" class="coinGeckoTitle">Coin Gecko</h1>
 <div class="coinGeckoCards">
-  <div *ngFor="let coin of coins" class="coinGeckoCard">
+  <div *ngFor="let coin of coins" class="coinGeckoCard" [routerLink]="['/coin', coin.id]">
     <div>
       <img [src]="coin.image" class="coinGeckoSymbol"/>
     </div>
@@ -12,4 +12,8 @@
       <p><span>Low 24 price:</span> {{ coin.low_24h }}</p>
     </div>
   </div>
+</div>
+
+<div *ngIf="!coins">
+  <p>Loading...</p>
 </div>

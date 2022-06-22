@@ -22,4 +22,11 @@ export class CoinsService {
     )
   }
 
+  getCoinById(id: string): Observable<Coin> {
+    return (this.http.get(coinUrl + '/' + id) as Observable<Coin>)
+    .pipe(
+      retry(2)
+    )
+  }
+
 }

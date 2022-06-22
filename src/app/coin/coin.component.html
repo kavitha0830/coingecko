@@ -1,0 +1,15 @@
+<div *ngIf="coin" class="coinGeckoCardDetails">
+  <p><span>Name:</span> {{ coin.name }}</p>
+  <p><span>Symbol:</span> {{ coin.symbol }}</p>
+  <p><span>Hashing algorithm:</span> {{ coin.hashing_algorithm }}</p>
+  <p><span>Description:</span><span class="coinGeckoCardDescription" [innerHTML]="coin.description.en"></span></p>
+  <p><span>Market cap in Euro:</span> {{ coin.market_data.current_price.eur }}</p>
+  <p><span>Genesis Date:</span> {{ coin.genesis_date }}</p>
+  <div class="coinGeckoBackToHome">
+    <button routerLink="">Back</button>
+  </div>
+</div>
+
+<div *ngIf="!coin">
+  <p>Loading...</p>
+</div>
