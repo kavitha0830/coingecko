@@ -1,0 +1,15 @@
+<h1 class="coinGeckoTitle">Coin Gecko</h1>
+<div class="coinGeckoCards">
+  <div *ngFor="let coin of coins" class="coinGeckoCard">
+    <div>
+      <img [src]="coin.image" class="coinGeckoSymbol"/>
+    </div>
+    <div>
+      <p><span>Name:</span> {{ coin.name }}</p>
+      <p><span>Symbol:</span> {{ coin.symbol }}</p>
+      <p><span>Current price:</span> {{ coin.current_price }}</p>
+      <p><span>High 24 price:</span> {{ coin.high_24h }}</p>
+      <p><span>Low 24 price:</span> {{ coin.low_24h }}</p>
+    </div>
+  </div>
+</div>
